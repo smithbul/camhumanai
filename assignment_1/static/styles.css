@@ -1,30 +1,93 @@
+/* Container for the whole chat interface */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* History of chat messages */
+.chat-history {
+  padding: 15px;
+  background-color: white;
+  height: 400px;
+  overflow-y: scroll;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Chat input section styling */
 .chat-input {
   display: flex;
+  align-items: center;
   padding: 10px;
+  background-color: #f1f1f1;
+  border-top: 1px solid #ddd;
 }
 
+/* Text input styling */
 .chat-input input[type="text"] {
   flex-grow: 1;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
   margin-right: 10px;
+  transition: border-color 0.3s;
 }
 
+.chat-input input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Buttons for uploading and sending */
 .chat-input button {
   background-color: #007bff;
   color: white;
-  padding: 8px 12px;
+  padding: 10px 15px;
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   cursor: pointer;
-  margin-left: 5px; /* Add margin to the left to create space between buttons */
-}
-
-.chat-input button:first-of-type {
-  margin-left: 0; /* Remove margin from the first button to align it properly */
+  font-size: 14px;
+  transition: background-color 0.3s;
 }
 
 .chat-input button:hover {
   background-color: #0056b3;
+}
+
+/* Make buttons uniform in size */
+.chat-input button:first-of-type {
+  margin-left: 0;
+}
+
+/* Space between the file upload and send button */
+.chat-input input[type="file"] {
+  display: none;
+}
+
+/* Styling for user and bot messages */
+.message {
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.user-message {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end;
+}
+
+.bot-message {
+  background-color: #e9ecef;
+  color: black;
+  align-self: flex-start;
 }

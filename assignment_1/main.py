@@ -97,5 +97,5 @@ async def query_openai(request: QueryRequest):
 # Root endpoint to serve the HTML file
 @app.get("/")
 async def read_root():
-    return FileResponse('static/index.html')
+    return FileResponse('/static/index.html')
 

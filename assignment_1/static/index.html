@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat Interface</title>
-  <link rel="stylesheet" href="static/styles.css">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <div class="chat-container">
     <div class="chat-history" id="chat-history"></div>
     <div class="chat-input">
       <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
-      <input type="file" id="file-input" style="display:none;" onchange="handleFileUpload(event)">
-      <button onclick="triggerFileInput()">Upload</button>
+      <input type="file" id="file-input" accept=".csv" onchange="handleFileUpload(event)">
+      <button onclick="triggerFileInput()">Upload CSV</button>
       <button onclick="sendMessage()">Send</button>
     </div>
   </div>
-  <script src="static/script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
