@@ -3,19 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat Interface</title>
-  <link rel="stylesheet" href="./styles.css">
+  <title>CSV Upload and Query</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
 </head>
 <body>
-  <div class="chat-container">
-    <div class="chat-history" id="chat-history"></div>
-    <div class="chat-input">
-      <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
-      <input type="file" id="file-input" accept=".csv" onchange="handleFileUpload(event)">
+  <div id="chat-container">
+    <div id="chat-history"></div>
+    <div id="drop-zone" class="drop-zone">
+      Drag and drop a CSV file here or
       <button onclick="triggerFileInput()">Upload CSV</button>
-      <button onclick="sendMessage()">Send</button>
     </div>
+    <input type="file" id="file-input" style="display: none;" onchange="handleFileUpload(event)">
+    <div id="error-message" class="error-message"></div>
+    <div id="table-preview" class="table-preview"></div>
+    <input type="text" id="chat-input" onkeypress="handleKeyPress(event)" placeholder="Type your query here...">
+    <button onclick="sendMessage()">Send</button>
   </div>
-  <script src="./script.js"></script>
+  <script src="/static/script.js"></script>
 </body>
 </html>

@@ -1,52 +1,77 @@
 /* Container for the whole chat interface */
-.chat-container {
+#chat-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  font-family: 'Arial', sans-serif;
 }
 
 /* History of chat messages */
-.chat-history {
+#chat-history {
   padding: 15px;
-  background-color: white;
+  background-color: #f9f9f9;
   height: 400px;
-  overflow-y: scroll;
+  overflow-y: auto;
   border-bottom: 1px solid #ddd;
 }
 
+/* Drop zone styling */
+.drop-zone {
+  padding: 20px;
+  border: 2px dashed #007bff;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.drop-zone:hover {
+  background-color: #e9ecef;
+  border-color: #0056b3;
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  text-align: center;
+  margin: 10px;
+}
+
+/* Table preview styling */
+.table-preview {
+  margin: 10px;
+  overflow-x: auto;
+}
+
+.table-preview table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-preview th, .table-preview td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table-preview th {
+  background-color: #f2f2f2;
+}
+
 /* Chat input section styling */
-.chat-input {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  background-color: #f1f1f1;
-  border-top: 1px solid #ddd;
+#chat-container > button,
+#chat-container > input[type="text"] {
+  margin: 10px;
 }
 
-/* Text input styling */
-.chat-input input[type="text"] {
-  flex-grow: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  font-size: 16px;
-  margin-right: 10px;
-  transition: border-color 0.3s;
-}
-
-.chat-input input[type="text"]:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
-/* Buttons for uploading and sending */
-.chat-input button {
+#chat-container > button {
   background-color: #007bff;
   color: white;
   padding: 10px 15px;
@@ -57,18 +82,23 @@
   transition: background-color 0.3s;
 }
 
-.chat-input button:hover {
+#chat-container > button:hover {
   background-color: #0056b3;
 }
 
-/* Make buttons uniform in size */
-.chat-input button:first-of-type {
-  margin-left: 0;
+#chat-container > input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: border-color 0.3s;
 }
 
-/* Space between the file upload and send button */
-.chat-input input[type="file"] {
-  display: none;
+#chat-container > input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 /* Styling for user and bot messages */
@@ -90,4 +120,29 @@
   background-color: #e9ecef;
   color: black;
   align-self: flex-start;
+}
+
+/* Chart container styling */
+.chart-message {
+  width: 100%;
+  height: 300px;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollbar styling */
+#chat-history::-webkit-scrollbar {
+  width: 8px;
+}
+
+#chat-history::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+#chat-history::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
 }
